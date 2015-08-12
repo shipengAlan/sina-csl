@@ -1,0 +1,59 @@
+﻿http://platform.sina.com.cn/sports_all/client_api?app_key=3749442444&_sport_t_=livecast&_sport_a_=matchesByType&type=213&rnd=22&limit=20&showguess=1
+#获取当前中超积分榜
+http://platform.sina.com.cn/sports_all/client_api?app_key=3749442444&_sport_t_=football&_sport_s_=opta&_sport_a_=teamOrder&type=213&limit=20
+#球员榜 item=1射门，item=2助攻榜（参见http://match.sports.sina.com.cn/football/csl/opta_rank.php?item=shoot&year=2015&lid=8&type=1&dpc=1的type值）
+http://platform.sina.com.cn/sports_all/client_api?app_key=3749442444&_sport_t_=football&_sport_s_=opta&_sport_a_=playerorder&item=2&type=213%&limit=20
+#比赛信息
+http://platform.sina.com.cn/sports_all/client_api?app_key=3749442444&_sport_t_=livecast&_sport_a_=getMatch&id=121005
+##
+http://platform.sina.com.cn/sports_all/client_api?app_key=3749442444&_sport_t_=f24&_sport_a_=matchevent&match_id=121005&type_id=13,14,15,16,17,18,19,20
+#文字直播orderid=0逆序，orderid=1时间顺序
+http://platform.sina.com.cn/sports_all/client_api?app_key=3749442444&_sport_t_=livecast&_sport_a_=livelog&id=121005&nolink=0&order=1&num=1500&orderid=1
+	apis : {
+		schedule : 'http://platform.sina.com.cn/sports_all/client_api?app_key=%appkey%&_sport_t_=livecast&_sport_a_=matchesByType&type=%lid%&rnd=%rnd%&limit=20&showguess=1',
+		scoreTeam : 'http://platform.sina.com.cn/sports_all/client_api?app_key=%appkey%&_sport_t_=football&_sport_s_=opta&_sport_a_=teamOrder&type=%lid%&limit=20',
+		scorePlayer : 'http://platform.sina.com.cn/sports_all/client_api?app_key=%appkey%&_sport_t_=football&_sport_s_=opta&_sport_a_=playerorder&item=%item%&type=%lid%&limit=20',
+		recomPlayer : 'http://platform.sina.com.cn/sports_all/client_api?app_key=%appkey%&_sport_t_=football&_sport_s_=opta&_sport_a_=recmdPlayer&league_type=%lid%',
+		teams : 'http://platform.sina.com.cn/sports_all/client_api?app_key=%appkey%&_sport_t_=football&_sport_s_=opta&_sport_a_=getteams&type=%lid%&limit=%num%',
+		playersByTeam : 'http://platform.sina.com.cn/sports_all/client_api?app_key=%appkey%&_sport_t_=football&_sport_s_=opta&_sport_a_=getTeamPlayers&type=%lid%&id=%teamid%',
+		playerSeasonData : 'http://platform.sina.com.cn/sports_all/client_api?app_key=%appkey%&_sport_t_=football&_sport_s_=opta&_sport_a_=playerStatics&type=%lid%&id=%playerid%',
+		videoList : 'http://platform.sina.com.cn/premierleague/videolist?app_key=%appkey%&match_id=%mid%&if_rotate_video=%rotate%&url=%url%',
+		match : 'http://platform.sina.com.cn/sports_all/client_api?app_key=%appkey%&_sport_t_=livecast&_sport_a_=getMatch&id=%mid%',
+		matchQuick : 'http://platform.sina.com.cn/sports_all/client_api?app_key=%appkey%&_sport_t_=football&_sport_s_=opta&_sport_a_=getMatchHighSpeed&id=%mid%',
+		matchByTeam : 'http://platform.sina.com.cn/sports_all/client_api?app_key=%appkey%&_sport_t_=livecast&_sport_a_=getTeamPreMatches&id=%teamid%&limit=%num%',
+		matchTeamData : 'http://platform.sina.com.cn/sports_all/client_api?app_key=%appkey%&_sport_t_=football&_sport_s_=opta&_sport_a_=matchteamstatics&id=%mid%',
+		matchPlayerData : 'http://platform.sina.com.cn/sports_all/client_api?app_key=%appkey%&_sport_t_=football&_sport_s_=opta&_sport_a_=matchplayerstatics&id=%mid%',
+		matchPlayers : 'http://platform.sina.com.cn/sports_all/client_api?app_key=%appkey%&_sport_t_=football&_sport_s_=opta&_sport_a_=matchlineup&id=%mid%',
+		formation : 'http://platform.sina.com.cn/sports_all/client_api?app_key=%appkey%&_sport_t_=football&_sport_s_=opta&_sport_a_=teamformation&id=%mid%',
+		preFormation : 'http://platform.sina.com.cn/sports_all/client_api?app_key=%appkey%&_sport_t_=football&_sport_s_=opta&_sport_a_=preTeamFormation&id=%mid%',
+		shootPoint : 'http://platform.sina.com.cn/sports_all/client_api?app_key=%appkey%&_sport_t_=f24&_sport_a_=matchevent&match_id=%mid%&type_id=13,14,15,16',
+		heatmap : 'http://platform.sina.com.cn/sports_all/client_api?app_key=%appkey%&_sport_t_=livecast&_sport_a_=heatmap&match_id=%mid%&player_id=%playerid%',
+		playerAction : 'http://platform.sina.com.cn/sports_all/client_api?app_key=%appkey%&_sport_t_=livecast&_sport_a_=eventDetails&match_id=%mid%&player_id=%playerid%',
+		matchEvent : 'http://platform.sina.com.cn/sports_all/client_api?app_key=%appkey%&_sport_t_=f24&_sport_a_=matchevent&match_id=%mid%&type_id=13,14,15,16,17,18,19,20',
+		matchcast : 'http://platform.sina.com.cn/sports_all/client_api?app_key=%appkey%&_sport_t_=livecast&_sport_a_=livelog&id=%mid%&nolink=0&order=1&num=1500&orderid=%nid%',
+		getGidByMatch : 'http://guess.sports.sina.com.cn/interface/guess/get_game_by_sina',
+		guessByMatch : 'http://guess.sports.sina.com.cn/interface/guess/get_game_all_guess_list',
+		guessByDate : 'http://guess.sports.sina.com.cn/interface/guess/get_game_guess_list',
+		teamGetVote : 'http://platform.sina.com.cn/sports_client/get_vote?app_key=%appkey%&match_id=l_%mid%',
+		teamSendVote : 'http://platform.sina.com.cn/sports_client/vote?app_key=%appkey%&match_id=%mid%&vote=%hv%',
+		recentRecord : 'http://platform.sina.com.cn/sports_all/client_api?app_key=%appkey%&_sport_t_=Odds&_sport_a_=teamRecentMatches&limit=%num%',
+		liverVote : 'http://platform.sina.com.cn/sports_uc/voteLiver?app_key=%appkey%&%para%',
+		liverInfo : 'http://platform.sina.com.cn/sports_uc/liverVote?app_key=%appkey%&liver_id=%liverid%&match_id=%mid%',
+		playerVoter : 'http://platform.sina.com.cn/sports_uc/playerVote?app_key=%appkey%&match_id=%mid%&poll_type=%type%',
+		playerVote : 'http://platform.sina.com.cn/sports_uc/votePlayer?app_key=%appkey%&select_item=%item%&match_id=%mid%&poll_type=%type%',
+		guessInfo : 'http://guess.sports.sina.com.cn/interface/guess/get_user_info',
+		guessBet : 'http://guess.sports.sina.com.cn/interface/guess/join_guess',
+		suspension : 'http://platform.sina.com.cn/sports_all/client_api?app_key=%appkey%&_sport_t_=football&_sport_s_=opta&_sport_a_=absentPlayer&match_id=%mid%',
+		penalty : 'http://platform.sina.com.cn/sports_all/client_api?app_key=%appkey%&_sport_t_=football&_sport_s_=opta&_sport_a_=matchPenaltyevent&id=%mid%',
+		ranktop : 'http://platform.sina.com.cn/sports_all/client_api?app_key=%appkey%&_sport_t_=f24&_sport_a_=pktop&match_id=%mid%&type=all',
+		subscribeList : 'http://user.mix.sina.com.cn/subscribe/api/subscribe/get?project_id=90,91&from=pc',
+		subscribeUpdate : 'http://user.mix.sina.com.cn/subscribe/api/subscribe/update?callback=%callback%',
+		sharePic : 'http://match.sports.sina.com.cn/brazil2014/formation_v2/save?q=%q%&league_type=%lid%',
+		wbshare : 'http://service.t.sina.com.cn/share/share.php?url=%url%&title=%title%&relateUid=%uid%&searchPic=%searchpic%&pic=%pic%'
+	},
+	urls : {
+		match : 'http://match.sports.sina.com.cn/livecast/g/live.php?id=%mid%',
+		team : 'http://match.sports.sina.com.cn/football/team.php?id=%teamid%&dpc=1',
+		player : 'http://match.sports.sina.com.cn/football/player.php?id=%playerid%',
+		teamimg : 'http://www.sinaimg.cn/lf/sports/logo85/%teamid%.png',
+		playerimg : 'http://www.sinaimg.cn/ty/opta/players/default.jpg'

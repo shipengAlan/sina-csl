@@ -1,0 +1,6 @@
+中超足球文字直播控制台版
+由于编码gbk，请在windows下运行正常，linux下可能会乱码
+获取的数据来自sina api
+sina api 没有公开是从网页上找出来的
+其他的sina api（未全部用到）放在doc_sinaAPI.txt里面了，可自行发掘
+依赖库lxml,curses
