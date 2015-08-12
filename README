@@ -4,3 +4,4 @@
 sina api 没有公开是从网页上找出来的
 其他的sina api（未全部用到）放在doc_sinaAPI.txt里面了，可自行发掘
 依赖库lxml,curses
+运行方法：python console.py
